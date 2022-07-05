@@ -15,7 +15,8 @@ Para levantar el proyecto es necesario:
 - levantar proyecto
 
 ``` sh
-- abrir postman y ejecutar request: WS_Login
+- abrir postman y ejecutar request: WS_Register (creara usuario y clave en bd)
+- luego abrir request: WS_Login y ejecutar (password no va encriptada)
 - luego copiar token jwt y pegar en Auth, Type, BearerToken
 - abrir request y ejecutar: WS_CrearPersonajes (body vacio : {}) 
 - luego probar los demas request
