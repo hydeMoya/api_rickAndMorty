@@ -28,12 +28,17 @@ public class JwtAuthenticationController {
 	@Autowired
 	private JwtUserDetailsService userDetailsService;
 
+	/*@Autowired
+	private UsuarioRepository usuarioRepository;*/
+
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public ResponseEntity<?> createAuthenticationToken(@RequestBody JwtRequestTO authenticationRequest) throws Exception {
 
 		authenticate(authenticationRequest.getUsername(), authenticationRequest.getPassword());
 
 		final UserDetails userDetails = userDetailsService.loadUserByUsername(authenticationRequest.getUsername());
+
+		//Usuario user = usuarioRepository.findByUsername(userDetails.getUsername());
 
 		final String token = jwtTokenUtil.generateToken(userDetails);
 

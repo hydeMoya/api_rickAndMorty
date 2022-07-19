@@ -8,6 +8,6 @@ import com.example.rickandmorty.entity.Usuario;
 @Repository
 public interface UsuarioRepository extends JpaRepository<Usuario,Long>{
 
-    Usuario findByUsername(String username);
+   public Usuario findByUsername(String username);
     
 }
